@@ -6,18 +6,21 @@ const Lista = () => {
 
   //funcion atada a un evento cuando cambia  se actualiza tarea 
   function handletarea(e) {
-    settarea(e.target.value);
+
+    settarea(e.target.value)
   }
 
   function enviarDatos(e) {
 	e.preventDefault()//detiene el comportamiento predeterminado del formulario
 	  console.log(tarea);
 	  settarea("")
-	 
   }
 //funcion agregar tarea 
   const agregartarea = () => {
-    setArrayTareas ([...arrayTareas, tarea])
+    if (tarea === "") {
+      alert("Debes ingresar alguna tarea")
+  } else {
+    setArrayTareas ([...arrayTareas, tarea])}
     settarea("")
 }
 //funcion borrar tarea
